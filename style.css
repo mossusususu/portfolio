@@ -1,0 +1,362 @@
+
+body{
+  margin: 0;
+  font-family: "Yu Gothic Medium", YuGothic, sans-serif;
+}
+
+
+
+
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+
+}
+
+.headerlogo{
+  padding: 8px 0 0 16px ;
+
+
+}
+
+.link{
+  line-height: 70px;
+  margin:0 0 0 auto;
+
+}
+
+a{
+  text-decoration: none;
+  margin: 0 16px;
+  color: rgba(0, 0, 0, 0.698);
+  background-color:#f2f2f2;
+  padding: 12px;
+  box-shadow: 8px 8px 20px rgb(112 112 112 / 20%), -8px -8px 20px #fff;
+  border-radius: 30px;
+  transition: .6s cubic-bezier(.16,.5,.43,1);
+  font-weight: bold;
+  font-family: 'ヒラギノ角ゴ Pro';
+
+}
+
+a:hover{
+  box-shadow: 8px 8px 20px rgb(160 160 160 / 20%), -8px -8px 20px #fff, inset 4px 4px 10px rgb(160 160 160 / 20%), inset -4px -4px 10px #fff;
+  transition: .6s cubic-bezier(.16,.5,.43,1);
+}
+.menuicon{
+  padding: 16px 16px 0 0 ;
+  display: none;
+}
+
+main{
+  text-align: center;
+  padding:30px;
+  /* background-image: url(bg.jpg);
+  background-size: cover; */
+  background-position: bottom;
+  background: rgba(255, 255, 255, 0.567);
+  border-bottom: black 1px solid double;
+}
+
+main img{
+  border-radius: 50%;
+}
+
+main p{
+  font-weight: bold;
+  width: 300px;
+  margin: 12px auto;
+  font-size: 2em;
+  color:rgba(0, 0, 0, 0.745);
+  background-color:#f2f2f2;
+  box-shadow: 8px 8px 20px rgb(112 112 112 / 30%), -8px -8px 20px #fff;
+  border-radius: 30px;
+
+}
+
+.bg-image{
+  background-image: url(bg3.jpg);
+  background-size: cover;
+
+
+}
+
+.yazirusi{
+  margin: 100px 0;
+  opacity: 0.7;
+}
+
+.yazirusi img {
+  animation: infinite-scroll 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* 上下にスクロールするアニメーションの定義 */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+section{
+  text-align: center;
+  animation: scrollanime linear;
+  animation-timeline: scrollanime();
+
+}
+.toumei{
+  background-color:rgba(255, 255, 255, 0.6);
+}
+
+@keyframes scrollanime{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+/* 四角のアニメーション */
+.square-animation {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+}
+
+.square {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  border-radius: 20%;
+  transition: transform 1s ease, opacity 1s ease;
+  background-color:#020202b4;
+  box-shadow: 8px 8px 20px rgb(112 112 112 / 30%), -8px -8px 20px #fff;
+}
+
+/* 四方の四角形の初期位置 */
+.top-left {
+  /* top: 100px; */
+  top:60px;
+  left: 80px;
+}
+
+.top-right {
+  /* top: 100px; */
+  top:60px;
+  right: 80px;
+}
+
+.bottom-left {
+  /* bottom: 100px; */
+  bottom:60px;
+  left: 80px;
+}
+
+.bottom-right {
+  /* bottom: 100px; */
+  bottom:60px;
+  right: 80px;
+}
+
+/* スクロール時に適用されるクラス */
+.animate .top-left {
+  transform: translate(-50px, -50px) rotate(345deg)  ;
+  opacity: 1;
+  animation: infinite;
+}
+
+.animate .top-right {
+  transform: translate(50px, -50px) rotate(-345deg);
+  opacity: 1;
+}
+
+.animate .bottom-left {
+  transform: translate(-50px, 50px) rotate(-345deg);
+  opacity: 1;
+}
+
+.animate .bottom-right {
+  transform: translate(50px, 50px) rotate(345deg);
+  opacity: 1;
+}
+
+h1{
+  margin: 120px;
+  font-size: 1.5em;
+}
+
+.box:nth-child(odd){
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.box{
+  display: flex;
+  border: double black 1px;
+  margin-bottom: 200px;
+  background:rgba(255, 255, 255, 0.8)
+}
+
+.box img{
+  object-fit: cover;
+}
+
+.box {
+  opacity: 0;
+  transform: translateY(50px); /* 下からスライドイン */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 要素が表示される時の状態 */
+.show {
+  opacity: 1;
+  transform: translateY(0); /* 元の位置に戻る */
+}
+
+footer {
+  background-color: #222;
+  color: #ddd;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  margin-right: 10px;
+}
+
+.footer-logo p {
+  font-size: 1.2em;
+  color: #f2f2f2;
+}
+
+.footer-links a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  transition: color 0.3s ease;
+  padding: 2px;
+  color: white;
+  background: none;
+  box-shadow: none;
+}
+
+.footer-links a:hover {
+  color: #3498db;
+
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 750px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo, .footer-links, .footer-social {
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-width:650px){
+
+  .box{
+    display: block;
+
+  }
+
+
+  .box:nth-child(odd){
+    display: block;
+
+  }
+
+
+
+  .menuicon{
+    display: inline-block;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    transform-origin: 30%;
+  }
+
+  .menuicon.rotate {
+    transform: rotate(90deg);
+  }
+
+   a{
+    padding: 2px;
+    color: white;
+    background: none;
+    box-shadow: none;
+   }
+
+   .link a:hover{
+    box-shadow: 8px 8px 20px rgb(160 160 160 / 20%), -8px -8px 20px #fff, inset 4px 4px 10px rgb(160 160 160 / 20%), inset -4px -4px 10px #fff;
+    transition: .6s cubic-bezier(.16,.5,.43,1);
+    opacity: 0.7;
+  }
+
+
+   .link{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index:100;
+    top: 60px;
+    right: 20px;
+    width: 30%;
+    background-color: rgba(58, 58, 58, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .link.open {
+    max-height: 500px;      /* 表示時の最大高さ */
+    opacity: 1;             /* 表示時は不透明 */
+
+  }
+
+}
